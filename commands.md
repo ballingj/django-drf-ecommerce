@@ -4,6 +4,7 @@ python-dotenv==1.0.1
 djangorestframework==3.15.1
 pytest==8.1.2
 pytest-django==4.8.0
+black=24.4.2
 
 
 ### start a project
