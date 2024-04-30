@@ -163,3 +163,5 @@ cython_debug/
 # My list
 .vscode
 schema.yml
+.coverage
+htmlcov/

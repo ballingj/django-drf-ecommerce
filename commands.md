@@ -7,7 +7,8 @@ pytest-django==4.8.0
 black=24.4.2
 django-mptt=0.16.0
 drf-spectacular=0.27.2
-
+coverage=7.5.0
+pytest-cov=5.0.0
 
 ### start a project
 django-admin startproject drfecommerce .
@@ -50,33 +51,34 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 ### intall pytest
 ### https://pypi.org/project/pytest/
 ### https://pytest-django.readthedocs.io/en/latest/
-```python
+```
 pip install pytest
 pip install pytest-django
-
+```
 ### Example using pytest.ini
 
-# -- FILE: pytest.ini
+#### -- FILE: pytest.ini
 [pytest]
 DJANGO_SETTINGS_MODULE = test.settings
 # -- recommended but optional:
 python_files = tests.py test_*.py *_tests.py
 
-### Test
+#### Test
 pytest -h   # get help
 pytest      # perform test
 
 ### Setup API Documentation with DRF_SPECTACULAR
 #### https://pypi.org/project/drf-spectacular/
+
 ```
 pip install drf-spectacular
 
 #### in settings.py
 
 INSTALLED_APPS = [
-    ...
+    . . .
     "drf_spectacular",
-    ...
+    . . .
 }
 
 REST_FRAMEWORK = {
@@ -89,8 +91,19 @@ SPECTACULAR_SETTINGS = {
     
 }
 
-# in the commandline 
+// # in the commandline 
 ./manage.py spectacular --file schema.yml
 
 ```
 
+### install testing tool called coverage
+#### [coverage](https://coverage.readthedocs.io/en/7.5.0/)
+pip install coverage
+
+coverage run -m pytest   # this will create a .coverage file
+coverage html            # this will create an html report
+
+#### slternative commanline coverage
+pip install pytest-cov
+
+pytest --cov
