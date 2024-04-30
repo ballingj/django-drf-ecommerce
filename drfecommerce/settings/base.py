@@ -47,7 +47,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # External Packages
     'rest_framework',
+    "drf_spectacular",
     # Local Packages
+    #'drfecommerce.product',    # product apps registration
+    'drfecommerce.product.apps.ProductConfig',
+    
 ]
 
 MIDDLEWARE = [
@@ -135,4 +139,11 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-REST_FRAMEWORK = {}
+# DRF-SPECTACULAR SETTINGS
+REST_FRAMEWORK = {"DEFAULT_SCHEMA_CLASS":"drf_spectacular.openapi.AutoSchema"}
+
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "django DRF ECommerce",
+    
+}

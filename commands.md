@@ -5,6 +5,8 @@ djangorestframework==3.15.1
 pytest==8.1.2
 pytest-django==4.8.0
 black=24.4.2
+django-mptt=0.16.0
+drf-spectacular=0.27.2
 
 
 ### start a project
@@ -63,4 +65,32 @@ python_files = tests.py test_*.py *_tests.py
 ### Test
 pytest -h   # get help
 pytest      # perform test
+
+### Setup API Documentation with DRF_SPECTACULAR
+#### https://pypi.org/project/drf-spectacular/
+```
+pip install drf-spectacular
+
+#### in settings.py
+
+INSTALLED_APPS = [
+    ...
+    "drf_spectacular",
+    ...
+}
+
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS":"drf_spectacular.openapi.AutoSchema",
+}
+
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "django DRF ECommerce",
+    
+}
+
+# in the commandline 
+./manage.py spectacular --file schema.yml
+
+```
 
