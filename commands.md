@@ -9,6 +9,7 @@ django-mptt=0.16.0
 drf-spectacular=0.27.2
 coverage=7.5.0
 pytest-cov=5.0.0
+pytest-factoryboy=2.7.0
 
 ### start a project
 django-admin startproject drfecommerce .
@@ -107,3 +108,8 @@ coverage html            # this will create an html report
 pip install pytest-cov
 
 pytest --cov
+
+### Pytest-factoryboy
+#### https://pypi.org/project/pytest-factoryboy/
+pip install pytest-factoryboy
+
